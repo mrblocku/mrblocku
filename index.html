@@ -8,6 +8,15 @@
     margin-top: 7vh;
 
 }
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
 </style>
 
 <head>
@@ -23,11 +32,11 @@
 <meta property="og:image" content="https://albedoiism.com/albedoiism.jpg" />
 </head>
 
-<div align="center">
-<audio controls loop>
-<source src="chinese.mp3" type="audio/mpeg">
-</audio>
-</div>
+<video autoplay loop id="myVideo">
+  <source src="https://albedoiism.com/24.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
 
 <div class="center">
 <img src="https://albedoiism.com/albedoiism.jpg" style="center" width="590px">
@@ -42,3 +51,19 @@
 <div class="center">
 <img src="https://www.albedoiism.com/1989.png" class="image" style="center">
 </div>
+
+
+<script>
+var video = document.getElementById("myVideo");
+var btn = document.getElementById("myBtn");
+
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}
+</script>
