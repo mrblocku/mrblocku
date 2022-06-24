@@ -1,1 +1,174 @@
 
+<style>
+:root {
+    --gap: 24px;
+    --content-gap: 20px;
+    --nav-width: 1024px;
+    --main-width: 720px;
+    --header-height: 60px;
+    --footer-height: 60px;
+    --radius: 8px;
+    --theme: #fff;
+    --entry: #fff;
+    --primary: rgba(255, 255, 255, 0.8);
+    --secondary: rgba(0, 0, 0, 0.56);
+    --tertiary: rgba(62, 62, 62, 0.8);
+    --content: rgba(0, 0, 0, 0.88);
+    --hljs-bg: #1c1d21;
+    --code-bg: #f5f5f5;
+    --border: #eee
+}
+
+
+
+
+html {
+    -webkit-tap-highlight-color: transparent;
+    overflow-y: scroll
+}
+
+a,button,body,h1,h2,h3,h4,h5,h6 {
+    color: var(--primary)
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    word-break: break-word;
+    background-color: #121212;
+    overflow: hidden; 
+    
+}
+
+article,aside,figcaption,figure,footer,header,hgroup,main,nav,section,table {
+    display: block
+}
+
+h1,h2,h3,h4,h5,h6 {
+    line-height: 1.2
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+
+a {
+    text-decoration: none
+    
+}
+
+body,figure,ul {
+    margin: 0
+}
+
+
+input,textarea {
+    outline: 0
+}
+
+button,input[type=button],input[type=submit] {
+    cursor: pointer
+}
+
+input:-webkit-autofill,textarea:-webkit-autofill {
+    box-shadow: 0 0 0 50px var(--theme)inset
+}
+
+img {
+    display: block;
+    max-width: 100%
+}
+
+#theme-toggle svg {
+    height: 18px
+}
+
+button#theme-toggle {
+    font-size: 26px;
+    margin: auto 4px
+    
+}
+
+.main {
+    position: relative;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+    margin: auto;
+    padding: var(--gap)
+}
+
+
+.buttons,.main .profile {
+    display: flex;
+    justify-content: center
+    
+}
+
+.main .profile {
+    align-items: center;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height) - (var(--gap) * 2));
+    text-align: center
+}
+
+.profile .profile_inner h1 {
+    padding: 12px 0
+}
+
+.profile img {
+    display: inline-table;
+    border-radius: 50%;
+    pointer-events: none
+}
+}
+</style>
+
+<title>Miiverse 2.0</title>
+
+<main class=main>
+<div class=profile>
+<div class=profile_inner>
+<img src=https://cdn.discordapp.com/attachments/753725310536777809/988276644886229012/anniversary.png height=300 width=300>
+<br>
+<script>
+
+    CountDownTimer('07/25/2022 12:00 AM', 'countdown');
+
+    function CountDownTimer(dt, id)
+    {
+        var end = new Date(dt);
+
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var timer;
+
+        function showRemaining() {
+            var now = new Date();
+            var distance = end - now;
+            if (distance < 0) {
+
+                clearInterval(timer);
+                document.getElementById(id).innerHTML = 'EXPIRED!';
+
+                return;
+            }
+            var days = Math.floor(distance / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);
+
+            document.getElementById(id).innerHTML = days + 'days ';
+            document.getElementById(id).innerHTML += hours + 'hrs ';
+            document.getElementById(id).innerHTML += minutes + 'mins ';
+            document.getElementById(id).innerHTML += seconds + 'secs';
+        }
+
+        timer = setInterval(showRemaining, 1000);
+    }
+
+</script>
+<div id="countdown"></div>
